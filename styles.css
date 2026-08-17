@@ -1,0 +1,69 @@
+:root {
+  --ink: #17233d;
+  --muted: #5f6b84;
+  --blue: #5368e8;
+  --blue-dark: #3447bd;
+  --lavender: #eef0ff;
+  --line: #e5e8f0;
+  --surface: #ffffff;
+  --background: #f8f9fc;
+  --shadow: 0 18px 45px rgba(31, 49, 112, .09);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--background);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+a { color: var(--blue-dark); }
+.shell { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+header { background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); }
+.nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { color: var(--ink); font-size: 1.12rem; font-weight: 800; text-decoration: none; letter-spacing: -.02em; }
+.brand-mark { display: inline-grid; place-items: center; width: 34px; height: 34px; margin-right: 8px; border-radius: 11px; color: white; background: linear-gradient(135deg, var(--blue), #8f9cff); vertical-align: middle; }
+nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 18px; }
+nav a { color: var(--muted); font-size: .92rem; text-decoration: none; }
+nav a:hover { color: var(--blue-dark); }
+.hero { padding: 92px 0 78px; background: radial-gradient(circle at 85% 10%, #e8ebff 0, transparent 37%), linear-gradient(180deg, #fff, var(--background)); }
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 64px; }
+.eyebrow { color: var(--blue-dark); font-size: .77rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+h1, h2, h3 { line-height: 1.15; letter-spacing: -.035em; }
+h1 { max-width: 680px; margin: 14px 0 20px; font-size: clamp(2.7rem, 6vw, 5rem); }
+h2 { margin: 0 0 16px; font-size: clamp(1.7rem, 3vw, 2.35rem); }
+h3 { margin: 0 0 8px; font-size: 1.15rem; }
+.lead { max-width: 610px; color: var(--muted); font-size: 1.16rem; }
+.button { display: inline-block; margin-top: 22px; padding: 12px 20px; border-radius: 12px; color: white; background: var(--blue); font-weight: 700; text-decoration: none; box-shadow: 0 8px 18px rgba(83,104,232,.25); }
+.button:hover { background: var(--blue-dark); }
+.hero-card { padding: 30px; border: 1px solid #dfe3ff; border-radius: 28px; background: var(--surface); box-shadow: var(--shadow); }
+.hero-card .bubble { padding: 15px 17px; margin: 12px 0; border-radius: 16px 16px 16px 4px; color: #3e4a68; background: var(--lavender); }
+.hero-card .bubble.right { margin-left: 30px; border-radius: 16px 16px 4px 16px; color: white; background: var(--blue); }
+section { padding: 76px 0; }
+.section-intro { max-width: 650px; margin-bottom: 30px; }
+.section-intro p, .muted { color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card { padding: 25px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 17px; border-radius: 13px; color: var(--blue-dark); background: var(--lavender); font-size: 1.25rem; }
+.legal { padding: 64px 0 90px; background: #fff; }
+.legal-wrap { max-width: 780px; }
+.legal h1 { font-size: clamp(2.3rem, 5vw, 3.7rem); }
+.legal h2 { margin-top: 42px; font-size: 1.45rem; }
+.legal h3 { margin-top: 25px; }
+.updated { color: var(--muted); font-size: .92rem; }
+.notice { padding: 18px 20px; border-left: 4px solid var(--blue); border-radius: 8px; background: var(--lavender); }
+footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+.footer-row { display: flex; justify-content: space-between; gap: 20px; }
+footer a { margin-left: 15px; text-decoration: none; }
+ul { padding-left: 22px; }
+@media (max-width: 760px) {
+  .shell { width: min(100% - 28px, 680px); }
+  .nav { align-items: flex-start; padding: 15px 0; flex-direction: column; }
+  nav { gap: 12px; }
+  .hero { padding: 60px 0 50px; }
+  .hero-grid, .cards { grid-template-columns: 1fr; gap: 22px; }
+  section { padding: 52px 0; }
+  .footer-row { flex-direction: column; }
+  footer a { margin: 0 15px 0 0; }
+}
